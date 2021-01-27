@@ -2,35 +2,55 @@
 <section class="app-header" style=" background-size: 100%;
 background-position: center 35%;
 filter: grayscale(50%);
-background-image: url(/images/team.jpg);">
+min-height: 220px;
+background-image:
+    linear-gradient(to bottom, rgba(20, 20, 20, 0.616), rgba(3, 3, 3, 0.73)),
+    url('/images/team.jpg');
+    opacity: 0.8;
+    border-width: 10px;
+   border-bottom-width:10px;
+   border-bottom-color:gray;
+   border-bottom-style: solid;
+   
+"
+                     >
   <br>
   <div class="main-content">
 
     <h1>Meet The Team</h1>
-
+    <p>
+      brainlife.io is developed by an open community of scientists and a group of dedicated trainees and <br>professional
+      software engineers.
+    </p>
     <br>
   </div>
 </section>
 
 <section class="main-content">
-  <p>
-    brainlife.io is developed by an open community of scientists and a group of dedicated trainees and <br>professional
-    software engineers.
-  </p>
-  <p>
-    <!-- <img src="/images/team.jpg" width="100%" class="team" /> -->
-  </p>
-
+  <center>
+    <h1 style="   margin-top: 30px; margin-bottom: 30px;    ">Project Members</h1>
+    <p style="margin: 30px;">The following individuals are actively contributing to the brainlife.io project.</p>
+    </center>
+  <table class="layout-table">
+  {{ range .Pages }}
+          {{ if in .Params.tags "pi" }}
+          <tr>
+            <td width="40%" class="contact">
+              <img src="{{.Params.image}}" style="width: 200px;height:200px"><br>
+              <a>{{.Title}}</a><br>
+              <span class="title">{{.Params.position}}</span>
+            </td>
+            <td width="60%">
+              <p> {{.Params.description}} </p>
+            </td>
+          </tr>
+          {{ end }}
+  {{end}}
+  </table>
   <div class="colorback" style="background-color: #2693ff">
-    <div class="container">
-      <div class="row">
-        <br>
         <center>
-          <h1>Project Members</h1>
-          <br>
-          <p>The following individuals are actively contributing to the brainlife.io project.</p>
+          <!-- <p style="margin: 0;">The following individuals are actively contributing to the brainlife.io project.</p> -->
         </center>
-        <br>
         <table class="layout-table">
           {{ range .Pages }}
           {{ if in .Params.tags "active" }}
@@ -48,8 +68,7 @@ background-image: url(/images/team.jpg);">
           {{ end }}
 
         </table>
-      </div>
-    </div>
+     
   </div>
   <!-- <div style="margin-top: 6rem; ">
     <h1>
@@ -95,12 +114,8 @@ background-image: url(/images/team.jpg);">
     </div> -->
 
     <div class="colorback" style="background-color: #159957">
-      <br>
-      <br>
-      <br>
       <center>
         <h1>Collaborators</h1>
-        <br>
         <p>Many thanks to all brainlife.io collaborators!</p>
       </center>
       <br>
@@ -127,8 +142,9 @@ background-image: url(/images/team.jpg);">
       margin: 32px 0;">
           {{range .Pages}}
           {{if in .Params.tags "collaborators"}}
-          <li style=" margin: 0 10px;
-          flex-basis: calc(33% - 20px);" class="contact">
+          <li style=" margin-top: 20px;
+          flex-basis: calc(33.3% - 20px);" 
+           class="contact">
             <img src='{{.Params.image}}'><br>
             <a>{{.Title}}</a><br>
             <span class="title"> {{.Params.position}}</span><br>
