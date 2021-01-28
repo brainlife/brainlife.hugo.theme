@@ -1,35 +1,35 @@
 {{ define "main" }}
-<section class="app-header" style=" background-size: 100%;
-background-position: center 35%;
-filter: grayscale(50%);
-min-height: 220px;
-background-image:
+<style>
+.app-header {
+    background-size: 100%;
+    background-position: center 35%;
+    filter: grayscale(50%);
+    padding-top: 50px;
+    min-height: 200px;
+    background-image:
     linear-gradient(to bottom, rgba(20, 20, 20, 0.616), rgba(3, 3, 3, 0.73)),
     url('/images/team.jpg');
     opacity: 0.8;
     border-width: 10px;
-   border-bottom-width:10px;
-   border-bottom-color:gray;
-   border-bottom-style: solid;
-   
-"
-                     >
-  <br>
+    border-bottom-width:10px;
+    border-bottom-color:gray;
+    border-bottom-style: solid;
+}
+</style>
+<section class="app-header">
   <div class="main-content">
-
     <h1>Meet The Team</h1>
     <p>
-      brainlife.io is developed by an open community of scientists and a group of dedicated trainees and <br>professional
-      software engineers.
+        brainlife.io is developed by an open community of scientists and a group of dedicated trainees and <br>professional
+        software engineers.
     </p>
-    <br>
   </div>
 </section>
 
 <section class="main-content">
   <center>
-    <h1 style="   margin-top: 30px; margin-bottom: 30px;    ">Project Members</h1>
-    <p style="margin: 30px;">The following individuals are actively contributing to the brainlife.io project.</p>
+    <h1 style="margin: 50px;">Project Members</h1>
+    <p style="margin: 50px;">The following individuals are actively contributing to the brainlife.io project.</p>
     </center>
   <table class="layout-table">
   {{ range .Pages }}
@@ -47,6 +47,8 @@ background-image:
           {{ end }}
   {{end}}
   </table>
+  <br>
+  <br>
   <div class="colorback" style="background-color: #2693ff">
         <center>
           <!-- <p style="margin: 0;">The following individuals are actively contributing to the brainlife.io project.</p> -->

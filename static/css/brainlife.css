@@ -354,7 +354,7 @@ z-index: 1;
 
 .main-content .colorback {
     margin: 0 -9999rem;
-    padding: 1em 9999rem;
+    padding: 4em 9999rem;
     color: white;
 }
 .main-content .colorback.lightgrayback {
