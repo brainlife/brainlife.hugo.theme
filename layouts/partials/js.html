@@ -35,11 +35,10 @@ function initMap() {
     function onscroll() {
         // window.alert("Scrolling");
         var y = window.scrollY;
-        console.log(y);
         var mainContent = document.getElementById("main-content");
         
         var bannerClasses = ['page-header'];
-        console.log(bannerClasses);
+        console.log(mainContent);
         
         if (y >= 150) bannerClasses.push('affix');
         if (mainContent.getBoundingClientRect().top <= 0) bannerClasses.push('overscrolled');
