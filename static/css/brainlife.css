@@ -9,7 +9,32 @@ body {
     overflow-x: hidden;
     font-family: Raleway !important;
 }
+.mobile-margin {
+  display : block;
+}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) { 
+  .mobile-margin { 
+    display: none;
+  }
+  #mobile-nav {
+    left:25%;
+    right:25%;
+  }
 
+}
+
+
+
+
+@media only screen and (max-width: 500px) {
+
+.contact img {
+  height: auto !important;
+  width : auto !important;
+}
+}
 html body {
 padding-top: 0px;
 }
