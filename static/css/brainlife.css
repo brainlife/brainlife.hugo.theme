@@ -584,6 +584,8 @@ div.online {
     }
     .floatleft {
         position: relative;
+        width: 448px;
+        height: 252px;
     }
 
     
