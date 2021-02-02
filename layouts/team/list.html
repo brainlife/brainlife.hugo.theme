@@ -137,26 +137,25 @@
 
       <!-- </div>
     </div> -->
-      <div class="gallery">
-        <ul style=" display: flex;
-      flex-flow: row wrap;
-      list-style: none;
-      margin: 32px 0;">
+    <div class="bootstrap-wrapper">
+      <div class="container">
+        <div class="row"> 
           {{range .Pages}}
           {{if in .Params.tags "collaborators"}}
-          <li style=" margin-top: 20px;
-          flex-basis: calc(33.3% - 20px);" 
-           class="contact">
-            <img src='{{.Params.image}}'><br>
+            <div class="col-md-4 col-sm-4 col-xs-4 contact">
+              <img src='{{.Params.image}}'><br>
             <a>{{.Title}}</a><br>
             <span class="title"> {{.Params.position}}</span><br>
             <span class="location">{{.Params.location}}</span><br>
-          </li>
+            </div>
+            {{end}}
           {{end}}
-          {{end}}
-        </ul>
-      </div>
+        </div>
     </div>
+</div>
+    </div>
+
+    
 
     <div>
       <br>

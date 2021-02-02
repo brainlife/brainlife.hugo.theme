@@ -32,7 +32,7 @@ and (max-device-width : 480px) {
 
 .contact img {
   height: auto !important;
-  width : auto !important;
+  width : 70% !important;
 }
 }
 html body {
@@ -432,7 +432,6 @@ z-index: 1;
     display: block;
 }
 .contact {
-    margin-right: 20px;
     margin-bottom: 20px;
     text-align: center;
 }
