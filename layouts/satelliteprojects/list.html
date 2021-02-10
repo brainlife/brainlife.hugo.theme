@@ -96,6 +96,7 @@ li.timeline-item::before {
       <br>
       <center>
         <h1>Satellite Projects</h1>
+        <p>We work with a number of projects to advance research and make neuroimaging more accessible to everyone through <a href="http://brainlife.io">brainlife.io.</a></p>
       </center>
       <br>
 
@@ -141,14 +142,15 @@ li.timeline-item::before {
       var olddate = startDate
       const D = new Date(startDate);// {object Date}
       startDate = getFormattedDate(D);
-    content = '<li class="timeline-item bg-white rounded ml-3 p-4 shadow" data-event-date = "'+D+'""> <div class="timeline-arrow"></div><p><span class="blue-text">'+startDate +'</span></p><h2 class="h5">'+title+'</h2><p>'+pi+' ,'+copi+'</p> <p class="journal bold"><br><span><a href='+title+'><span class="badge badge-pill badge-info">'+'</a></span></p></li>';
+    content = '<li class="timeline-item bg-white rounded ml-3 p-4 shadow" data-event-date = "'+D+'""><div class="timeline-arrow"></div><p><span class="blue-text">'+startDate +'</span></p><h2 class="h5">'+title+'</h2><p>'+pi+' ,'+copi+'</p> <p class="journal bold"><br><span><a href='+title+'><span class="badge badge-pill badge-info">'+'</a></span></p></li>';
     document.getElementById('_awards').innerHTML += content;
     
     }
     const CORS_PROXY = "https://cors-anywhere.herokuapp.com/"
 
-    axios.get(CORS_PROXY+'https://api.nsf.gov/services/v1/awards.json?keyword="franco+pestilli"&printFields=startDate,expDate,id,title,awardee,agency,awardeeName,piFirstName,piLastName,coPDPI').then(response =>{
-    // console.log(response.data);
+    axios.get('http://api.nsf.gov/services/v1/awards.json?keyword="franco+pestilli"&printFields=startDate,expDate,id,title,awardee,agency,awardeeName,piFirstName,piLastName,coPDPI').then(response =>{
+    console.log("Hiii its nsf");
+      console.log(response.data);
     console.log(response.data.response.award);
     var outputs = response.data.response.award;
     for(i=0; i <= outputs.length;i++){
@@ -162,8 +164,9 @@ li.timeline-item::before {
     }
 });
 
-axios.get('https://api.federalreporter.nih.gov/v1/Projects/search?query=piName%3AFRANCO%20PESTILLI&offset=1&limit=100').then(response =>{
-    console.log(response);
+axios.get('http://api.federalreporter.nih.gov/v1/Projects/search?query=piName%3AFRANCO%20PESTILLI&offset=1&limit=100').then(response =>{
+  console.log("Hiii its nih");  
+  console.log(response);
     // console.log(response.data.response.award);
     var outputs = response.data.items;
     for(i=0; i <= outputs.length;i++){
