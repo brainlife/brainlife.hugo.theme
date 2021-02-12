@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-us">
   {{ partial "head.html" . }}
-  <body>
+  <body style="line-height: 180%;">
+
     {{ partial "landing_banner.html" .}}
-    <section class="main-content" id="main-content" style="background-color: white; margin-top: 250px; position: relative; z-index: 10; padding-top: 0px;">
-    <div style="margin: 0 -9999rem; padding: 0 9999rem; padding-bottom: 0px; background-color: white;">
-        {{partial "landing_about.html" .}}
+    <div class="main-content overflow" id="main-content" style="margin-top:250px;z-index: 10;">
+      
+      <div style="background: white">
+        {{partial "landingabout.html" .}}
+      </div>
+      
         {{partial "landing-everyone.html" .}}
         {{partial "landing.mission.html" .}}
         {{partial "landing.sponsor.html" .}}
         {{partial "landing.start.html" .}}
         {{ partial "footer.html" . }}
-
-      </div>
-
-    </section>
+    </div>
 
     <!-- {% partial analytics.html %} -->
   </body>
